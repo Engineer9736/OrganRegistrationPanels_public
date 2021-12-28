@@ -26,11 +26,11 @@ void loop() {
   if (availableBytesToRead > 0) {
     Serial.readBytes(buf, availableBytesToRead);
     
-    if (buf[0] == 0x90) {
+    if (buf[0] == 0x90) { // Note on signal, turn the LED on
       digitalWrite(34, HIGH);
     }
 
-    if (buf[0] == 0x80) {
+    if (buf[0] == 0x80) { // Note off signal, turn the LED off
       digitalWrite(34, LOW);
     }
   }
