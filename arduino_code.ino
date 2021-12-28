@@ -31,8 +31,7 @@ void loop() {
     }
 
     if (buf[0] == 0x80) {
-      // The note off signal is not needed for changing stops in Hauptwerk; This would cause unnecesary data traffic on the MIDI connection.
-      //digitalWrite(34, LOW);
+      digitalWrite(34, LOW);
     }
   }
 
@@ -47,7 +46,8 @@ void loop() {
   if (prevstate == 0 && val == 1) {
     //Serial.println("Button released");
 
-    MIDImessage(noteON + 7, note, 0);
+     // The note off signal is not needed for changing stops in Hauptwerk; This would cause unnecesary data traffic on the MIDI connection.
+    //MIDImessage(noteON + 7, note, 0);
   }
 
   prevstate = val;
