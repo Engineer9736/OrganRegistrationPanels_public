@@ -126,7 +126,7 @@ void writeNumberTo7SegmentLCD(int startPos, int amountDigits, int number) {
   // Convert the number to a string
   String input = String(number);
 
-  // Append the string with zeroes until it reaches the length amountDigits.
+  // Prepend the string with zeroes until it reaches the length amountDigits.
   while (input.length() < amountDigits) {
     input = "0" + input;
   }
